@@ -20,13 +20,13 @@ ActiveAdmin.register Artist do
 
     def new
       super do |format|
-        redirect_to artist_url and return if resource.valid?
+        render 'show'
       end
     end
 
     def edit
       super do |format|
-        redirect_to artist_url and return if resource.valid?
+        render 'show'
       end
     end
   end
