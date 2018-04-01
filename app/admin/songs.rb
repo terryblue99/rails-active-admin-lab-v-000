@@ -14,8 +14,4 @@ ActiveAdmin.register Song do
   permit_params :title, :artist_name
   actions :all
 
-  controller do
-    actions :index, :show
-  end
-
 end

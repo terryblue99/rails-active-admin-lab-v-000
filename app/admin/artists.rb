@@ -14,21 +14,4 @@ ActiveAdmin.register Artist do
   permit_params :name
   actions :all, except: [:destroy]
 
-  controller do
-
-    actions :index, :show
-
-    def new
-      super do |format|
-        render 'show'
-      end
-    end
-
-    def edit
-      super do |format|
-        render 'show'
-      end
-    end
-  end
-
 end
