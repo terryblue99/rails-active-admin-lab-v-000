@@ -11,11 +11,24 @@ ActiveAdmin.register Artist do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  permit_params :name
   actions :all, except: [:destroy]
 
-  form do |f|
-    f.semantic_errors
-    f.actions
+  controller do
+
+    actions :index, :show
+
+    def new
+      super do |format|
+        redirect_to artist_url and return if resource.valid?
+      end
+    end
+
+    def edit
+      super do |format|
+        redirect_to artist_url and return if resource.valid?
+      end
+    end
   end
 
 end

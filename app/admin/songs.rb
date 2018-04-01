@@ -11,12 +11,11 @@ ActiveAdmin.register Song do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+  permit_params :title, :artist_name
   actions :all
 
-  form do |f|
-    f.semantic_errors
-    f.actions
+  controller do
+    actions :index, :show
   end
 
 end
